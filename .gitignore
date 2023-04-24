@@ -22,3 +22,34 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# ignore Python compiled files and cache
+*.pyc
+__pycache__/
+
+# ignore environment and package manager files
+venv/
+pip-lock.txt
+pipenv.lock
+yarn.lock
+package-lock.json
+
+# ignore data and model files
+data/
+models/
+
+# ignore notebooks checkpoints and outputs
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+*.html
+*.pdf
+
+# ignore any logs or temporary files
+*.log
+*.csv
+*.xls
+*.xlsx
+*.pickle
+*.h5
+*.npy
+*.npz
