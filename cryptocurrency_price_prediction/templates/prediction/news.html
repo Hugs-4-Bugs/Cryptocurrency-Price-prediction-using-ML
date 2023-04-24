@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load tz %}
+{% load bootstrap4 %}
+{% load static %}
+
+
+{% block content %}
+<section id="news" class="news-section pt-100 pb-70 img-bg">
+<h1 style="text-align: center; margin: 1rem 0rem">Latest Crypto News</h1>
+<div class="container">
+    <div class="card-deck row">
+        {% for news_item in news_data %}
+
+              <div class="col-xs-12 col-sm-6 col-md-3 mb-2">
+                  <div class="card">
+                    <div class="view overlay">
+                      <img class="card-img-top" src="{{ news_item.imageurl }}" alt="Card image cap">
+                      <a href="{{ news_item.url }}">
+                        <div class="mask rgba-white-slight"></div>
+                      </a>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">{{ news_item.title|truncatewords:10 }}</h5>
+                      <p class="card-text">{{ news_item.body|truncatewords:30 }}
+                        <a href="{{ news_item.url }}" class="mask rgba-white-slight">Read more</a>
+                      </p>
+                        <p class="card-text"><small class="text-muted">Published on {{ news_item.published_on|date:"M d, Y" }} at {{ news_item.published_on|time:"h:i A" }}</small></p>
+
+                    </div>
+                  </div>
+              </div>
+        {% endfor %}
+    </div>
+</div>
+</section>
+{% endblock %}
