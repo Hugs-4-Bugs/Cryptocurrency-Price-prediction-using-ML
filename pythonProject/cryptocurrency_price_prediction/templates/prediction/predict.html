@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<section id="service" class="service-section pt-150 pb-120">
+  <div class="container">
+        <h2 style="text-align: center">Predict Cryptocurrency Price</h2>
+    <div class="row align-items-center text-center">
+        <div class="col-xl-6 col-lg-6">
+              <form id="form" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="theme-btn wow fadeInUp mt-5" type="submit">Predict</button>
+              </form>
+        </div>
+        <div class="col-xl-6 col-lg-6">
+            <div class="about-content mb-30">
+                <div class="section-title mb-40">
+                    <h2 class="wow fadeInUp" data-wow-delay=".2s">Result</h2>
+                </div>
+                <div id="predicted_price" {% if not predicted_price %}style="display: none;"{% endif %}>
+                    {% if predicted_price %}
+<!--                        <p class="mb-15 wow fadeInUp" data-wow-delay=".4s">Actual Price: {{ actual_price|floatformat:4 }}</p>-->
+                        <p class="mb-15 wow fadeInUp" data-wow-delay=".4s">Predicted Price: {{ predicted_price|floatformat:4 }}</p>
+                        <a href="https://finance.yahoo.com/quote/{{ form.coin.value }}-USD/history/" target="_blank" class="theme-btn theme-btn-2 wow fadeInRight" data-wow-delay=".8s">Learn More</a>
+                    {% endif %}
+                </div>
+                <script>
+                    var resultSection = document.getElementById('predicted_price');
+                    var predicted_price = '{{ predicted_price }}';
+                    if (predicted_price) {
+                      resultSection.style.display = 'block';
+                    } else {
+                      resultSection.style.display = 'hidden';
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+
+
