@@ -74,7 +74,7 @@ Required python libraries such as pandas, numpy, scikit-learn, matplotlib, tenso
 
 ### To run the serveer type command:
 
-         'python mamage.py runserver'
+         'python manage.py runserver'
      
      
 
