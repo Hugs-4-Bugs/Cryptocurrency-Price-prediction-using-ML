@@ -51,30 +51,30 @@ Required python libraries such as pandas, numpy, scikit-learn, matplotlib, tenso
 
 -> To creates a virtual environment named env.
         
-        'python -m venv env'
+        python -m venv env
         
  ### To activates the virtual environment:
 
 ->  Source for mac/linux 
 
-         'env/bin/activate'
+         env/bin/activate
 
 ->  Source for windows
 
-         'env\Scripts\activate.bat'
+         env\Scripts\activate.bat
          
 ### To enter inside the project folder use command..
 
-         'cd cryptocurrency_price_prediction'
+         cd cryptocurrency_price_prediction
 
 ### To installs the required python libraries.
 
-         'pip install -r requirements.txt'
+         pip install -r requirements.txt
 
 
 ### To run the serveer type command:
 
-         'python manage.py runserver'
+         python manage.py runserver
      
      
 
