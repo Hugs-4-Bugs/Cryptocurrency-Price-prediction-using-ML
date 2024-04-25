@@ -72,7 +72,7 @@ Required python libraries such as pandas, numpy, scikit-learn, matplotlib, tenso
          pip install -r requirements.txt
 
 
-### To run the serveer type command:
+### To run the server type command:
 
          python manage.py runserver
      
