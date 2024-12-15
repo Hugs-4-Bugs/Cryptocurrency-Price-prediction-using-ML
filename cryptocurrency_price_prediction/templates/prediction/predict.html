@@ -21,8 +21,10 @@
                     {% if predicted_price %}
 <!--                        <p class="mb-15 wow fadeInUp" data-wow-delay=".4s">Actual Price: {{ actual_price|floatformat:4 }}</p>-->
                         <p class="mb-15 wow fadeInUp" data-wow-delay=".4s">Predicted Price: {{ predicted_price|floatformat:4 }}</p>
-                        <a href="https://finance.yahoo.com/quote/{{ form.coin.value }}-USD/history/" target="_blank" class="theme-btn theme-btn-2 wow fadeInRight" data-wow-delay=".8s">Learn More</a>
-                    {% endif %}
+<!--                         <a href="https://finance.yahoo.com/quote/{{ form.coin.value }}-USD/history/" target="_blank" class="theme-btn theme-btn-2 wow fadeInRight" data-wow-delay=".8s">Learn More</a> -->
+                        <a href="https://in.tradingview.com/symbols/{{ form.coin.value }}INR/" target="_blank" class="theme-btn theme-btn-2 wow fadeInRight" data-wow-delay=".8s">Learn More</a>
+                  {% endif %}
+                
                 </div>
                 <script>
                     var resultSection = document.getElementById('predicted_price');
